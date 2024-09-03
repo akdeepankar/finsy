@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Spline from '@splinetool/react-spline/next';
-import { Input } from "@nextui-org/react";
+import { Input, Button } from "@nextui-org/react";
 import { MailIcon } from './MailIcon';
 
 export default function Home() {
@@ -90,17 +90,12 @@ export default function Home() {
             <span className="text-8xl font-semibold text-blue-300">Astra</span>
           </p>
           <p className="text-4xl text-gray-700 dark:text-gray-200 max-w-6xl animate-slide-up">  
-            <span className="font-semibold text-white">Finsy&apos;s weekly dose of future-proof finance tips, insights, and newsletters delivered straight to your inbox!&quot;</span>
+            <span className="font-semibold text-white">Finastra is a Futuristic tool of Finsy.</span>
           </p>
-          <Input
-            type="email"
-            label="Email"
-            placeholder="you@example.com"
-            labelPlacement="outside"
-            startContent={
-              <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-            }
-          />
+          <a href="https://www.vidyarang.online/" target="_blank" rel="noreferrer"> <Button color="default" className="mt-2 ml-2">
+        Vidya Rang
+      </Button></a>
+          
         </div>
       </section>
 
