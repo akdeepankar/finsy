@@ -90,7 +90,11 @@ export default function Home() {
             <span className="text-8xl font-semibold text-blue-300">Astra</span>
           </p>
           <p className="text-4xl text-gray-700 dark:text-gray-200 max-w-6xl animate-slide-up">  
-            <span className="font-semibold text-white">Finastra is a Futuristic tool of Finsy.</span>
+            <span className="font-semibold text-white">Finastra is a Futuristic tools of Finsy.</span>
+            
+          </p>
+          <p className="text-4xl text-gray-700 dark:text-gray-200 max-w-6xl animate-slide-up">  
+            <span className="font-semibold text-white">You can try Vidya Rang. Our current Product on Beta Stage.</span>
           </p>
           <a href="https://www.vidyarang.online/" target="_blank" rel="noreferrer"> <Button color="default" className="mt-2 ml-2">
         Vidya Rang
@@ -107,7 +111,7 @@ export default function Home() {
             <span className="text-8xl font-semibold text-red-300">Sights</span>
           </p>
           <p className="text-4xl text-gray-700 dark:text-gray-200 max-w-6xl animate-slide-up">  
-            <span className="font-semibold text-white">Finsy&apos;s weekly dose of future-proof finance tips, insights, and newsletters delivered straight to your inbox!&quot;</span>
+            <span className="font-semibold text-white">Finsy&apos;s weekly dose of future-proof finance tips, insights, and newsletters delivered straight to your inbox!</span>
           </p>
           <Input
             type="email"
