@@ -18,6 +18,8 @@ export default function Home() {
                 <a href="#hero-large" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Home</a>
                 <a href="#about" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Finsy</a>
                 <a href="#contact" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Contact</a>
+                <a href="#blog" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Blogs</a>
+
               </div>
             </div>
           </div>
@@ -68,7 +70,7 @@ export default function Home() {
       </section>
 
       {/* About FinLearn */}
-      <section id="about" className="min-h-screen bg-black dark:bg-gray-800 p-4">
+      <section id="about" className="min-h-screen bg-black dark:bg-black p-4">
         <div className="">
           <p className="pb-4">
             <span className="text-8xl font-semibold text-green-500"> Fin</span>
@@ -81,7 +83,7 @@ export default function Home() {
       </section>
 
       {/* About Finastra */}
-      <section id="about" className="min-h-screen bg-black dark:bg-gray-800 p-4">
+      <section id="about" className="min-h-screen bg-black dark:bg-black p-4">
         <div className="">
           <p className="pb-4">
             <span className="text-8xl font-semibold text-green-500"> Fin</span>
@@ -103,7 +105,7 @@ export default function Home() {
       </section>
 
       {/* About Finsights */}
-      <section id="about" className="min-h-screen bg-black dark:bg-gray-800 p-4">
+      <section id="about" className="min-h-screen bg-black dark:black p-4">
         <div className="">
           <p className="pb-4">
             <span className="text-8xl font-semibold text-green-500"> Fin</span>
