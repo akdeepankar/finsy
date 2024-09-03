@@ -52,7 +52,7 @@ export default function Home() {
       </section>
 
       {/* About Section - Visible only on Mobile */}
-      <section id="about" className="block md:hidden items-center justify-center min-h-screen bg-black dark:bg-gray-800 text-center p-4">
+      <section id="about" className="block md:hidden items-center justify-center min-h-screen bg-black dark:bg-black text-center p-4">
         <div className="justify-center">
           <p className="text-md text-gray-700 dark:text-gray-200 max-w-6xl animate-slide-up font-poppins">
             <span className="font-medium text-green-400">Finsy</span>
