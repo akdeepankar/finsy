@@ -86,7 +86,7 @@ export default function Home() {
 
     </p>
     <p className="text-4xl text-gray-700 dark:text-gray-200 max-w-6xl animate-slide-up ">  
-      <span className="font-semibold text-white">Unlock the future of finance with Finlearn—Finsy's guided lessons designed to make you a financial expert, one step at a time.</span>
+      <span className="font-semibold text-white">In my time, relying on one income stream is a thing of the past. To succeed in the future, you need to diversify your income.” Finsy and the --------- discuss the importance of having multiple income streams.</span>
     </p>
 
   </div>
