@@ -1,113 +1,187 @@
 import Image from "next/image";
+import Spline from '@splinetool/react-spline/next';
+import {Input} from "@nextui-org/react";
+import {MailIcon} from './MailIcon';
+
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex flex-col min-h-screen overflow-x-hidden ">
+      {/* Navbar */}
+      <nav className="fixed top-0 w-full bg-[#ffffff00] shadow-md z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex-shrink-0">
+              <h1 className="text-2xl font-bold text-green-400 dark:text-white">Finsy</h1>
+            </div>
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-4">
+                <a href="#hero-large" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Home</a>
+                <a href="#about" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Finsy</a>
+                <a href="#contact" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Contact</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </nav>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+
+
+
+      <section id="hero-large" className="hidden lg:flex flex-col items-center justify-center min-h-screen bg-black dark:bg-gray-900 pt-10">
+  <div className="w-full h-[700px]">
+    <Spline
+      scene="https://prod.spline.design/RWB65UNxnkVFnV57/scene.splinecode"
+      style={{ width: '100%', height: '100%' }}
+    />
+  </div>
+</section>
+
+<section id="hero-medium" className="hidden md:flex lg:hidden flex-col items-center justify-center min-h-screen bg-black dark:bg-gray-900 pt-10">
+  <div className="w-full h-[400px]">
+    <Spline
+      scene="https://prod.spline.design/5Utzlz83zbHQ7i7h/scene.splinecode"
+      style={{ width: '100%', height: '100%' }}
+    />
+  </div>
+</section>
+
+<section id="hero-mobile" className="block md:hidden flex-col items-center justify-center bg-black dark:bg-gray- pt-10">
+  <div className="w-full h-[800px]"> {/* Shortened height */}
+    <Spline
+      scene="https://prod.spline.design/5Utzlz83zbHQ7i7h/scene.splinecode"
+      style={{ width: '100%', height: '130%' }}
+    />
+  </div>
+</section>
+
+
+
+
+
+{/* About Section - Visible only on Mobile */}
+<section id="about" className="block md:hidden items-center justify-center min-h-screen bg-black dark:bg-gray-800 text-center p-4">
+  <div className="justify-center">
+    <p className="text-md text-gray-700 dark:text-gray-200 max-w-6xl animate-slide-up font-poppins">
+      <span className="font-medium text-green-400">Finsy</span>
+      <span className="font-medium text-white">, a robot from the year 3024, was sent back in time to retrieve a powerful financial artifact.</span>
+      <span className="font-medium text-white"> However, during the mission, a glitch in time travel technology traps Finsy in 2024.</span>
+      <span className="font-medium text-white"> Now stuck in the past, Finsy uses futuristic financial wisdom to help people understand and master money management, hoping to unlock the secret to returning to the future.</span>
+      <span className="font-medium text-white"> Each lesson Finsy teaches brings it closer to repairing its time circuits, but it also helps people</span>
+    </p>
+    <p className="pt-2">
+      <span className="text-3xl font-semibold text-green-500 pt-2">BUILD BETTER FINANCIAL FUTURES.</span>
+    </p>
+  </div>
+</section>
+
+
+{/* About FinLearn */}
+<section id="about" className="  min-h-screen bg-black dark:bg-gray-800  p-4">
+  <div className=" ">
+        <p className="pb-4">
+    <span className="text-8xl font-semibold text-green-500"> Fin</span>
+    <span className="text-8xl font-semibold text-yellow-300">Learn</span>
+
+    </p>
+    <p className="text-4xl text-gray-700 dark:text-gray-200 max-w-6xl animate-slide-up ">  
+      <span className="font-semibold text-white">Unlock the future of finance with Finlearn—Finsy's guided lessons designed to make you a financial expert, one step at a time.</span>
+    </p>
+
+  </div>
+</section>
+
+{/* About Finastra */}
+<section id="about" className="  min-h-screen bg-black dark:bg-gray-800  p-4">
+  <div className=" ">
+        <p className="pb-4">
+    <span className="text-8xl font-semibold text-green-500"> Fin</span>
+    <span className="text-8xl font-semibold text-blue-300">Astra</span>
+
+    </p>
+    <p className="text-4xl text-gray-700 dark:text-gray-200 max-w-6xl animate-slide-up ">  
+      <span className="font-semibold text-white">Finsy's weekly dose of future-proof finance tips, insights, and newsletters delivered straight to your inbox!"</span>
+    </p>
+    <Input
+          type="email"
+          label="Email"
+          placeholder="you@example.com"
+          labelPlacement="outside"
+          startContent={
+            <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+          }
         />
-      </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+  </div>
+</section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+{/* About Finsights */}
+<section id="about" className="  min-h-screen bg-black dark:bg-gray-800  p-4">
+  <div className=" ">
+    
+        <p className="pb-4">
+    <span className="text-8xl font-semibold text-green-500"> Fin</span>
+    <span className="text-8xl font-semibold text-red-300">Sights</span>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </p>
+    <p className="text-4xl text-gray-700 dark:text-gray-200 max-w-6xl animate-slide-up ">  
+      <span className="font-semibold text-white">Finsy's weekly dose of future-proof finance tips, insights, and newsletters delivered straight to your inbox!"</span>
+    </p>
+    <Input
+          type="email"
+          label="Email"
+          placeholder="you@example.com"
+          labelPlacement="outside"
+          startContent={
+            <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+          }
+        />
+
+  </div>
+</section>
+
+{/* Services Section */}
+<section id="products" className="flex flex-col items-center justify-center min-h-screen bg-white dark:bg-gray-900 text-center p-8">
+  <div className="flex overflow-x-auto space-x-8 max-w-full scrollbar-hide scrollbar-thumb-rounded-full scrollbar-thumb-gray-400">
+    
+    {/* Finlearn Card */}
+    <div className="flex-none bg-gray-100 dark:bg-gray-800 rounded-lg">
+      <Image 
+        src="/finlearn.png" // Replace with your image path
+        alt="Finlearn"
+        width={500} // Adjust width to match the square size
+        height={320} // Adjust height to match the square size
+        className="rounded-lg mx-auto object-cover"
+      />
+      <p className="text-lg font-semibold mt-4">Finlearn</p>
+    </div>
+
+    {/* Finastra Card */}
+    <div className="flex-none bg-gray-100 dark:bg-gray-800 rounded-lg">
+      <Image 
+        src="/finastra.png" // Replace with your image path
+        alt="Finastra"
+        width={500} // Adjust width to match the square size
+        height={320} // Adjust height to match the square size
+        className="rounded-lg mx-auto object-cover"
+      />
+      <p className="text-lg font-semibold mt-4">Finastra</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+{/* Contact Section */}
+<section id="contact" className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800 text-center p-8">
+  <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white">Contact Us</h2>
+  <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">We're here to help. Reach out to learn more about our services.</p>
+  <button className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700">Get in Touch</button>
+</section>
+</main>
   );
 }
