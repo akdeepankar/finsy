@@ -1,8 +1,8 @@
-
 import Image from "next/image";
 import Spline from '@splinetool/react-spline/next';
 import { Input, Button } from "@nextui-org/react";
 import { MailIcon } from './MailIcon';
+
 
 export default function Home() {
 
@@ -54,6 +54,7 @@ export default function Home() {
           />
         </div>
       </section>
+
 
       {/* About Section - Visible only on Mobile */}
       <section id="about" className="block md:hidden items-center justify-center min-h-screen bg-black dark:bg-black text-center p-4">
