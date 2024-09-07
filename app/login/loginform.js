@@ -90,8 +90,9 @@ const LoginForm = () => {
         >
           Submit
         </button>
-        <br></br>
+        
       </form>
+      <br></br>
     </div>
   );
 };

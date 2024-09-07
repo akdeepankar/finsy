@@ -3,7 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import Select from 'react-select';
 
 const SignUpForm = () => {
-  const { register, handleSubmit, control, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, control, formState: { errors } } = useForm();
 
   const handleSignUp = (data) => console.log(data);
   const handleError = (errors) => console.log(errors);
@@ -25,14 +25,19 @@ const SignUpForm = () => {
         message: "Password must have at least 8 characters"
       }
     },
+    confirmPassword: {
+      required: "Please confirm your password",
+      validate: (value) =>
+        value === watch('password') || "Passwords do not match",
+    },
     role: { required: "Role is required" }
   };
 
   return (
     <div
       style={{
-        height:'580px',
-        maxWidth: '680px',
+        
+        maxWidth: '600px',
         minWidth: '320px',
         padding: '20px',
         display: 'flex',
@@ -43,10 +48,9 @@ const SignUpForm = () => {
         margin: '0 auto',
       }}
     >
-      <h1 style={{ textAlign: 'center',fontSize:'32px', fontWeight: 'bold' }}>
+      <h1 style={{ textAlign: 'center',fontSize:'42px', fontWeight: 'bold' }}>
         Sign Up
       </h1>
-      <br></br>
       <br></br>
       <form onSubmit={handleSubmit(handleSignUp, handleError)}>
         <div style={{ marginBottom: '20px' }}>
@@ -133,7 +137,39 @@ const SignUpForm = () => {
             <p style={{ color: 'red' }}>{errors.password.message}</p>
           )}
         </div>
-        <br></br>
+        <div style={{ marginBottom: '20px' }}>
+        <label htmlFor="confirmPassword">Re-enter Password</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          {...register('confirmPassword', signupOptions.confirmPassword)}
+          style={{
+            width: '100%',
+            padding: '10px',
+            border: '1px solid',
+            borderColor: errors?.confirmPassword ? 'red' : '#ccc',
+            borderRadius: '4px',
+          }}
+        />
+        {errors?.confirmPassword && (
+          <p style={{ color: 'red' }}>{errors.confirmPassword.message}</p>
+        )}
+      </div>
+      <br></br>
+        <div style={{ marginBottom: '20px' }}>
+          <label htmlFor="newsletter" style={{ display: 'flex', alignItems: 'center' }}>
+          <input
+            id="newsletter"
+            type="checkbox"
+            {...register('newsletter')}
+              style={{
+              marginRight: '10px',
+            }}
+          />
+          I want to receive newsletters from Finsy
+          </label>
+        </div>
+        
         <button
           type="submit"
           style={{
@@ -148,8 +184,8 @@ const SignUpForm = () => {
         >
           Submit
         </button>
-        <br></br>
       </form>
+      <br></br>
     </div>
   );
 };
