@@ -1,4 +1,3 @@
-// 'use client'; 
 import Image from "next/image";
 import Spline from '@splinetool/react-spline/next';
 import { Input, Button } from "@nextui-org/react";
@@ -8,6 +7,8 @@ import { MailIcon } from './MailIcon';
 
 
 export default function Home() {
+
+
   return (
     <main className="flex flex-col min-h-screen overflow-x-hidden ">
       {/* Navbar */}
@@ -23,7 +24,6 @@ export default function Home() {
                 <a href="#about" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Finsy</a>
                 <a href="#contact" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Contact</a>
                 <a href="#blog" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Blogs</a>
-
               </div>
             </div>
           </div>
@@ -85,8 +85,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About FinLearn */}
-      <section id="about" className="min-h-screen bg-black dark:bg-black p-4">
+         {/* About FinLearn */}
+         <section id="about" className="min-h-screen bg-gradient-to-br from-gray-900 to-black p-4">
         <div className="">
           <p className="pb-4">
             <span className="text-8xl font-semibold text-green-500"> Fin</span>
@@ -119,70 +119,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Finsights */}
-      <section id="about" className="min-h-screen bg-black dark:black p-4">
-        <div className="">
-          <p className="pb-4">
-            <span className="text-8xl font-semibold text-green-500"> Fin</span>
-            <span className="text-8xl font-semibold text-red-300">Sights</span>
-          </p>
-          <p className="text-4xl text-gray-700 dark:text-gray-200 max-w-6xl animate-slide-up">  
-            <span className="font-semibold text-white">Finsy&apos;s weekly dose of future-proof finance tips, insights, and newsletters delivered straight to your inbox!</span>
-          </p>
-          <Input
-            type="email"
-            label="Email"
-            placeholder="you@example.com"
-            labelPlacement="outside"
-            startContent={
-              <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-            }
-          />
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="products" className="flex flex-col items-center justify-center min-h-screen bg-white dark:bg-gray-900 text-center p-8">
-        <div className="flex overflow-x-auto space-x-8 max-w-full scrollbar-hide scrollbar-thumb-rounded-full scrollbar-thumb-gray-400">
+      <section id="products" className="flex flex-col items-start justify-center min-h-screen bg-gradient-to-br from-gray-900 to-black p-6">
+        <p className="pb-4">
+          <span className="text-8xl font-semibold text-green-500"> Fin</span>
+          <span className="text-8xl font-semibold text-yellow-300">Sights</span>
+        </p>
+        <div className="flex overflow-x-scroll space-x-14 max-w-full scrollbar-hide snap-x snap-mandatory pt-5">
+          {/* Portrait Card 1 */}
+          <div className="flex-none bg-gray-800 hover:scale-105 transform transition-all duration-300 rounded-lg p-4 shadow-lg snap-center w-[380px] h-[500px]">
+            <Image src="/finlearn.png" alt="Finlearn" width={380} height={400} className="rounded-lg object-cover" />
+            <p className="text-lg font-semibold mt-4 text-green-400">Finlearn</p>
+            <p className="text-sm text-gray-400">A blog about learning the best financial practices for the future.</p>
+          </div>
           
-          {/* Finlearn Card */}
-          <div className="flex-none bg-gray-100 dark:bg-gray-800 rounded-lg">
-            <Image 
-              src="/finlearn.png" // Replace with your image path
-              alt="Finlearn"
-              width={500} // Adjust width to match the square size
-              height={320} // Adjust height to match the square size
-              className="rounded-lg mx-auto object-cover"
-            />
-            <p className="text-lg font-semibold mt-4">Finlearn</p>
+          {/* Portrait Card 2 */}
+          <div className="flex-none bg-gray-800 hover:scale-105 transform transition-all duration-300 rounded-lg p-4 shadow-lg snap-center w-[380px] h-[500px]">
+            <Image src="/finastra.png" alt="Finastra" width={380} height={400} className="rounded-lg object-cover" />
+            <p className="text-lg font-semibold mt-4 text-blue-400">Finastra</p>
+            <p className="text-sm text-gray-400">A guide to futuristic financial tools and insights from Finsy.</p>
           </div>
 
-          {/* Finastra Card */}
-          <div className="flex-none bg-gray-100 dark:bg-gray-800 rounded-lg">
-            <Image 
-              src="/finastra.png" // Replace with your image path
-              alt="Finastra"
-              width={500} // Adjust width to match the square size
-              height={320} // Adjust height to match the square size
-              className="rounded-lg mx-auto object-cover"
-            />
-            <p className="text-lg font-semibold mt-4">Finastra</p>
+          {/* Portrait Card 3 */}
+          <div className="flex-none bg-gray-800 hover:scale-105 transform transition-all duration-300 rounded-lg p-4 shadow-lg snap-center w-[380px] h-[500px]">
+            <Image src="/fininsights.png" alt="FinInsights" width={380} height={400} className="rounded-lg object-cover" />
+            <p className="text-lg font-semibold mt-4 text-red-400">FinInsights</p>
+            <p className="text-sm text-gray-400">Get the latest finance tips and insights to secure your future.</p>
           </div>
 
+          {/* Portrait Card 4 */}
+          <div className="flex-none bg-gray-800 hover:scale-105 transform transition-all duration-300 rounded-lg p-4 shadow-lg snap-center w-[380px] h-[500px]">
+            <Image src="/fintech.png" alt="FinTech" width={380} height={400} className="rounded-lg object-cover" />
+            <p className="text-lg font-semibold mt-4 text-purple-400">FinTech</p>
+            <p className="text-sm text-gray-400">Exploring the latest in financial technology and its impact.</p>
+          </div>
+
+          {/* Portrait Card 5 */}
+          <div className="flex-none bg-gray-800 hover:scale-105 transform transition-all duration-300 rounded-lg p-4 shadow-lg snap-center w-[380px] h-[500px]">
+            <Image src="/finviews.png" alt="FinViews" width={380} height={400} className="rounded-lg object-cover" />
+            <p className="text-lg font-semibold mt-4 text-yellow-400">FinViews</p>
+            <p className="text-sm text-gray-400">Diving deep into market trends and financial news with Finsy.</p>
+          </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800 text-center p-8">
-        <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white">Contact Us</h2>
-        <p className="text-lg text-gray-700 dark:text-gray-300">For inquiries, please reach out to us at:</p>
-        <p className="text-lg text-green-500 dark:text-green-300">contact@finsy.com</p>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-200 dark:bg-gray-900 text-center py-4">
-        <p className="text-gray-700 dark:text-gray-300">© 2024 Finsy. All rights reserved.</p>
-      </footer>
     </main>
   );
 }
