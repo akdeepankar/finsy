@@ -1,11 +1,20 @@
 'use client';
 import { useForm, Controller } from 'react-hook-form';
 import Select from 'react-select';
+import { auth } from '../firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const SignUpForm = () => {
   const { register, handleSubmit, watch, control, formState: { errors } } = useForm();
 
-  const handleSignUp = (data) => console.log(data);
+  const handleSignUp = async (data) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
+      console.log('User signed up:', userCredential.user);
+    } catch (error) {
+      console.error('Error signing up:', error.message);
+    }
+  };
   const handleError = (errors) => console.log(errors);
 
   const selectOptions = [

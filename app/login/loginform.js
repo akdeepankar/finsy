@@ -1,11 +1,27 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'; 
+import app from '../firebase'
 
 const LoginForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  
-  const handleLogin = (data) => console.log(data);
+  const auth = getAuth(app);
+  const [loginError, setLoginError] = useState(null);
+
+  const handleLogin = (data) => {
+    const { email, password } = data;
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log('Logged in:', userCredential.user);
+        setLoginError(null);  
+      })
+      .catch((error) => {
+        console.error('Login error:', error.message);
+        setLoginError('Invalid email or password');
+      });
+  };
+
   const handleError = (errors) => console.log(errors);
 
   const loginOptions = {
@@ -76,6 +92,9 @@ const LoginForm = () => {
           )}
         </div>
         <br></br>
+        {loginError && (
+          <p style={{ color: 'red', textAlign: 'center' }}>{loginError}</p>
+        )}
         <button
           type="submit"
           style={{
