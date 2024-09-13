@@ -2,8 +2,7 @@ import Image from "next/image";
 import Spline from '@splinetool/react-spline/next';
 import { Input, Button } from "@nextui-org/react";
 import { MailIcon } from './MailIcon';
-// import LoginForm from './login/loginform.js'
-// import SignUpForm from "./signup/signupform";
+
 
 
 export default function Home() {
@@ -39,17 +38,7 @@ export default function Home() {
         </div>
       </section>
       
-      {/* <section id="hero-large" className="hidden lg:flex flex-col items-center justify-center min-h-screen bg-black dark:bg-gray-900 pt-10">
-        <div className="w-full h-[700px]">
-          <LoginForm/>
-        </div>
-      </section>
-
-      <section id="hero-large" className="hidden lg:flex flex-col items-center justify-center min-h-screen bg-black dark:bg-gray-900 pt-10">
-        <div className="w-full h-[700px]">
-          <SignUpForm/>
-        </div>
-      </section> */}
+     
       <section id="hero-medium" className="hidden md:flex lg:hidden flex-col items-center justify-center min-h-screen bg-black dark:bg-gray-900 pt-10">
         <div className="w-full h-[400px]">
           <Spline
