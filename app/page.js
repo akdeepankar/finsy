@@ -2,7 +2,7 @@ import Image from "next/image";
 import Spline from '@splinetool/react-spline/next';
 import { Input, Button } from "@nextui-org/react";
 import { MailIcon } from './MailIcon';
-
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
                 <a href="#hero-large" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Home</a>
                 <a href="#about" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Finsy</a>
                 <a href="#contact" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Contact</a>
-                <a href="#blog" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Blogs</a>
+                <Link href="/blog" className="text-white dark:text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-800">Blogs</Link>
               </div>
             </div>
           </div>

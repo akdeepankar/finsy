@@ -1,42 +1,54 @@
 "use client"
-import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import Link from 'next/link';
 
-const BlogPost = () => {
-  const router = useRouter();
-  const { blogId } = router.query;
-  const [post, setPost] = useState(null);
+const Blog = () => {
+  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
 
   useEffect(() => {
-    if (blogId) {
-      const fetchPost = async () => {
-        try {
-          const response = await axios.get(`https://api.dev.finsy.in/api/posts/${blogId}/`);
-          setPost(response.data);
-          setLoading(false);
-        } catch (err) {
-          setError('Failed to fetch blog post');
-          setLoading(false);
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch('https://api.dev.finsy.in/api/posts/'); 
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
         }
-      };
+        const data = await response.json();
+        setPosts(data); 
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        setLoading(false);
+      }
+    };
 
-      fetchPost();
-    }
-  }, [blogId]);
+    fetchPosts();
+  }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
-  if (!post) return <div>No post found</div>;
+  
+  if (loading) {
+    return <p>Loading posts...</p>;
+  }
 
+ 
   return (
     <div>
-      <p>{post}</p>
+      <h1>Blog Page</h1>
+      {posts.length === 0 ? (
+        <p>No posts available.</p>
+      ) : (
+        <ul>
+          {posts.map((post) => (
+            <li key={post.id}>
+              <Link href={`/blog/${post.id}`}>
+                <a>{post.title}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
 
-export default BlogPost;
+export default Blog;
